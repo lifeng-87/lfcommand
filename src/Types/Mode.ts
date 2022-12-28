@@ -1,3 +1,5 @@
-export enum Mode{
-    dev, prod, debug
+export enum Mode {
+	dev = 'dev',
+	prod = 'prod',
+	debug = 'debug',
 }

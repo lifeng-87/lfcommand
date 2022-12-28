@@ -1,1 +1,1 @@
-export * from './LFCommand';
+export * from './LFcord';
