@@ -6,7 +6,7 @@ const {
 	GatewayIntentBits,
 	SlashCommandBuilder,
 } = require('discord.js');
-const { LFCommand, Mode } = require('../dist');
+const { LFcord, Mode } = require('../dist');
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
@@ -14,9 +14,9 @@ client.on('ready', () => {
 	console.log(`Logged in as ${client.user?.tag}!`);
 });
 
-const lfCommand = new LFCommand(client);
+const lfcord = new LFcord(client);
 
-lfCommand.addCommand({
+lfcord.addCommand({
 	data: new SlashCommandBuilder()
 		.setName('ping')
 		.setDescription('回復機器人延遲'),
@@ -32,7 +32,14 @@ lfCommand.addCommand({
 	},
 });
 
-lfCommand.registerCommands(
+lfcord.addEvent({
+	name: 'ready',
+	execute: () => {
+		console.log(`hehe`);
+	},
+});
+
+lfcord.registerCommands(
 	process.env.TOKEN,
 	process.env.GUILD_ID,
 	process.env.CLIENT_ID,
