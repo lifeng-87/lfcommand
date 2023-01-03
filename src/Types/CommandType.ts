@@ -6,7 +6,7 @@ import {
 } from 'discord.js';
 import { Client } from 'discord.js';
 
-export interface Command {
+export interface CommandType {
 	data:
 		| Omit<SlashCommandBuilder, 'addSubcommandGroup' | 'addSubcommand'>
 		| SlashCommandSubcommandsOnlyBuilder;

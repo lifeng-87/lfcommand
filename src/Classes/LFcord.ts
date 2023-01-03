@@ -10,11 +10,11 @@ import {
 } from 'discord.js';
 import EventEmitter from 'events';
 import { Mode } from '..';
-import { Command } from '../Types/Command';
-import { Events } from '../Types/Events';
+import { CommandType } from '../Types/CommandType';
+import { EventsType } from '../Types/EventsType';
 
 export class LFcord extends EventEmitter {
-	private commands: Collection<string, Command> = new Collection();
+	private commands: Collection<string, CommandType> = new Collection();
 	private cooldowns: Collection<string, any> = new Collection();
 	private client: Client;
 
@@ -130,13 +130,13 @@ export class LFcord extends EventEmitter {
 		}
 	}
 
-	public addCommand(command: Command) {
+	public addCommand(command: CommandType) {
 		this.commands.set(command.data.name, command);
 	}
 
-	public on<K extends keyof Events>(
+	public on<K extends keyof EventsType>(
 		eventName: K,
-		listener: (...args: Events[K]) => void
+		listener: (...args: EventsType[K]) => void
 	): this {
 		return this;
 	}

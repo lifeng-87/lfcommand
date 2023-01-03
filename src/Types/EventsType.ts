@@ -1,6 +1,6 @@
 import { TextChannel } from 'discord.js';
 
-export type Events = {
+export type EventsType = {
 	isNotNSFWChannel: [channel: TextChannel];
 	isCooldown: [timeLeft: number];
 	error: [error: unknown];
