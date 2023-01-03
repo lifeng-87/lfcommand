@@ -39,7 +39,7 @@ lfcord.addEvent({
 	},
 });
 
-lfcord.registerCommands(
+lfcord.registCommands(
 	process.env.TOKEN,
 	process.env.GUILD_ID,
 	process.env.CLIENT_ID,
