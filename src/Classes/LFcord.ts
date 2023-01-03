@@ -7,11 +7,13 @@ import {
 	TextChannel,
 	Routes,
 	REST,
+	ClientEvents,
 } from 'discord.js';
 import EventEmitter from 'events';
 import { Mode } from '..';
 import { CommandType } from '../Types/CommandType';
 import { EventsType } from '../Types/EventsType';
+import { EventType } from '../Types/EventType';
 
 export class LFcord extends EventEmitter {
 	private commands: Collection<string, CommandType> = new Collection();
@@ -132,6 +134,10 @@ export class LFcord extends EventEmitter {
 
 	public addCommand(command: CommandType) {
 		this.commands.set(command.data.name, command);
+	}
+
+	public addEvent(event: EventType<keyof ClientEvents>) {
+		this.client.on(event.name, event.execute);
 	}
 
 	public on<K extends keyof EventsType>(
