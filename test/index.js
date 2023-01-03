@@ -43,7 +43,7 @@ lfcord.registerCommands(
 	process.env.TOKEN,
 	process.env.GUILD_ID,
 	process.env.CLIENT_ID,
-	Mode.dev
+	'dev'
 );
 
 client.login(process.env.TOKEN);

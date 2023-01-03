@@ -79,7 +79,7 @@ export class LFcord extends EventEmitter {
 		});
 	}
 
-	public async registerCommands(
+	public async registCommands(
 		token: string,
 		guildId: string,
 		clientId: string,
