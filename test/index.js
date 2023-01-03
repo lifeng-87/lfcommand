@@ -6,7 +6,7 @@ const {
 	GatewayIntentBits,
 	SlashCommandBuilder,
 } = require('discord.js');
-const { LFcord, Mode } = require('../dist');
+const { LFcord } = require('lfcord');
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
