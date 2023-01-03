@@ -1,5 +1,5 @@
 # LFcord
-A handler who can handle discord.js's command and event
+A handler that can handle discord.js's command and event
 
 ## Install
 ```
